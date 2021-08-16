@@ -39,7 +39,7 @@ def unmap(data, count, inds, fill=0):
 
 def vectorize_labels(flat_labels, num_classes, label_weights = None):
     prediction_number = flat_labels.shape[0]
-    labels = torch.zeros([prediction_number, num_classes], dtype=flat_labels.dtype, device=flat_labels.device)
+    labels = torch.zeros([prediction_number, num_classes], device=flat_labels.device)
     pos_labels = flat_labels > 0
     labels[pos_labels, flat_labels[pos_labels]-1] = 1
     if label_weights is not None:
