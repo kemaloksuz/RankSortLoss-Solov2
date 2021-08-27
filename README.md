@@ -1,6 +1,6 @@
 # Rank & Sort Loss for Object Detection and Instance Segmentation - SOLOv2 Implementation
 
-This repository provides an implementation of Rank & Sort Loss on SOLOv2. The implementation is based on [mmdetection v1](https://github.com/open-mmlab/mmdetection) and [this Solov2 implementation](https://github.com/WXinlong/SOLO). We plan to deprecate this repository after incorporating SOLOv2 into the [official Rank & Sort Loss Repository](https://github.com/kemaloksuz/RankSortLoss), which is based on mmdetection v2.
+This repository provides an implementation of Rank & Sort Loss on SOLOv2. The implementation is based on [mmdetection v1](https://github.com/open-mmlab/mmdetection) and [this Solov2 implementation](https://github.com/WXinlong/SOLO). 
 
 > [**Rank & Sort Loss for Object Detection and Instance Segmentation**](https://arxiv.org/abs/2107.11669),            
 > [Kemal Oksuz](https://kemaloksuz.github.io/), Baris Can Cam, [Emre Akbas](http://user.ceng.metu.edu.tr/~emre/), [Sinan Kalkan](http://www.kovan.ceng.metu.edu.tr/~sinan/),
@@ -32,15 +32,16 @@ This implementation is based on [mmdetection](https://github.com/open-mmlab/mmde
 ## Running the Code
 
 ### Training Code
-The configuration files of all models listed above can be found in the `configs/ranksort_loss` folder. As an example, to train Faster R-CNN with our RS Loss on 4 GPUs as we did, use the following command:
+The configuration files of all models listed above can be found in the `configs/ranksort_loss` folder. Note that we always use 4 GPUs, and for reproduction please follow our settings. 
+
+As an example, to train Solov2-light with our RS Loss on 4 GPUs as we did, use the following command:
 
 ```
-./tools/dist_train.sh configs/ranksort_loss/ranksort_solov2_light_448_r34_fpn_3x.py  4
+./tools/dist_train.sh ./configs/ranksort_loss/ranksort_solov2_light_448_r34_fpn_3x.py
 ```
 
 ### Test Code
-The configuration files of all models listed above can be found in the `configs/ranksort_loss` folder. As an example:
+To test the trained model (e.g. Solov2-light model), please use the following code:
 
 ```
-./tools/dist_test.sh ranksort_loss/ranksort_solov2_light_448_r34_fpn_3x.py ${CHECKPOINT_FILE}  4  --show --out results_solo.pkl --eval segm
-```
+./tools/dist_test.sh ./configs/ranksort_loss/ranksort_solov2_light_448_r34_fpn_3x.py ./work_dirs/ranksort_solov2_light_448_r34_fpn_3x/epoch_36.pth 4 --eval segm --out ranksort_solov2_light_448_r34_fpn_3x.pkl```
