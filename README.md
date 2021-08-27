@@ -25,8 +25,8 @@ This implementation is based on [mmdetection](https://github.com/open-mmlab/mmde
 
 | Backbone    |  Epoch  | mask AP | mask oLRP  |  Log  | Config | Model |
 | :---------: | :-----: | :------------: | :------------: | :-------: | :-------: | :-------: |
-|   ResNet-34 | 36 |   32.6  |   72.7  | Coming soon | [config](configs/ranksort_loss/ranksort_solov2_light_448_r34_fpn_3x.py) | Coming soon|
-|  ResNet-101 | 36 |   39.7  |   66.9  | Coming soon | [config](configs/ranksort_loss/ranksort_solov2_r101_fpn_3x.py) |Coming soon|
+|   ResNet-34 | 36 |   32.6  |   72.7  | [log](https://drive.google.com/file/d/1F0XdytiXB7OSsRaMxeqfs1PyH1HdQT65/view?usp=sharing) | [config](configs/ranksort_loss/ranksort_solov2_light_448_r34_fpn_3x.py) | [model](https://drive.google.com/file/d/1N-rF9iKZNevjHw-PTg4w12yAEbXL6wHg/view?usp=sharing) |
+|  ResNet-101 | 36 |   39.7  |   66.9  | [log](https://drive.google.com/file/d/1pc7JWaUxCdP5RxcZaQu01ei3z0GJuYwk/view?usp=sharing) | [config](configs/ranksort_loss/ranksort_solov2_r101_fpn_3x.py) |[model](https://drive.google.com/file/d/1hWqCwzkvB0ozWyZBoxyTqN5Y4MUedZGE/view?usp=sharing)|
 
 
 ## Running the Code
